@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:fragmen="head">
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Pet Shop">
+<meta name="author" content="Miguel Rosales">
+
+<title>Nosotros</title>
+
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/chosen.min.css}">
+<link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
+<link rel="stylesheet" th:href="@{/css/solid.min.css}">
+<link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+
+<body>
+
+	<header th:fragment="header">
+
+		<div style="width: 100%; height: 10vh;">
+
+			<nav style="height: 8vh;"
+				class="barra navbar navbar-expand-lg navbar-dark bg-dark">
+				<a class="navbar-brand" href="#"> <img title="PuffleShop"
+					src="/images/Icons/logo.png" width="70%">
+				</a>
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class=" collapse navbar-collapse" id="navbarNavDropdown">
+					<ul class=" nav justify-content-center">
+						<li class="nav-item "><a class="nav-link"
+							th:href="@{/tienda/inicio}" style="color: white"> Inicio</a></li>
+
+
+						<li class="nav-item"><a class="nav-link" href="#"
+							style="color: white">Nosotros</a></li>
+
+
+						<li class="nav-item active"><a class="nav-link" href="/"
+							style="color: white">Tienda</a></li>
+
+						<li class="nav-item"><a class="nav-link" href="#"
+							style="color: white">Contacto</a></li>
+					</ul>
+				</div>
+				<form id="Buscador" class="form-inline my-2 my-sm-0">
+					<input class="form-control mr-sm-2" type="search"
+						placeholder="Buscar" aria-label="Search">
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+				</form>
+			</nav>
+
+
+			<div class="row m-0">
+				<div class="col-lg-6">
+					<div class="container " style="margin: 0vh auto">
+						<div class="card-image" align="center" style="	">
+							<img src="https://petshopbysammy.com/img/nino_nos.jpg" width="80%" height="80%">
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="container " style="margin: 0vh auto">
+						<div class="card-image" align="center">
+							<img src="/images/Icons/logo.png" width="20%" height="20%">
+							<div style="padding: 0vh 5px; text-align: justify;">
+								<p>PET SHOP BY SAMMY nace en Noviembre del 2015, nuestra
+									mascota “Sammy” es el responsable de que en la actualidad
+									existamos, porque él ha sido la principal inspiración de este
+									proyecto. Hemos tenido siempre como prioridad ofrecer productos
+									variados y de calidad para nuestras mascotas, a precios
+									accesibles y acompañado por un servicio al cliente de primera.
+									La creación de una comunidad de clientes leales ha ayudado a
+									Pet Shop By Sammy a crecer y convertirse en la empresa que
+									somos ahora. No solo somos una tienda virtual, nuestra empresa
+									y todo nuestro equipo nos preocupamos y apoyamos a
+									asociaciones, albergues y fomentamos la tenencia responsable de
+									mascotas</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-image">
+					<img src="/images/Icons/Pie.png" height="100%" width="100%">
+				</div>
+			</div>
+	</header>
+
+
+	<footer th:fragment="footer">
+		<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+		<script th:src="@{/js/bootstrap.min.js}"></script>
+		<script th:src="@{/js/chosen.jquery.min.js}"></script>
+		<script th:src="@{/js/fontawesome.min.js}"></script>
+		<script th:src="@{/js/sweetalert.min.js}"></script>
+	</footer>
+
+</body>
+</html>
