@@ -1,9 +1,5 @@
 package pe.edu.upc.puffleshop.model;
 
-
-import java.util.List;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,14 +9,16 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "opciones")
-public class Opcion {
+@Table(name = "producto_caracteristica")
+public class Producto_Caracteristica {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public Integer id; 
+	public Integer id;
 	
-	@Column(name = "nombre", length = 50, nullable = false)
-	private String nombre;
+	@ManyToOne
+	@JoinColumn(name = "producto_id")
+	private Producto producto;
 	
 	@ManyToOne
 	@JoinColumn(name = "caracteristica_id")
@@ -34,12 +32,12 @@ public class Opcion {
 		this.id = id;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public Producto getProducto() {
+		return producto;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setProducto(Producto producto) {
+		this.producto = producto;
 	}
 
 	public Caracteristica getCaracteristica() {
@@ -49,8 +47,6 @@ public class Opcion {
 	public void setCaracteristica(Caracteristica caracteristica) {
 		this.caracteristica = caracteristica;
 	}
-
 	
 	
 }
-

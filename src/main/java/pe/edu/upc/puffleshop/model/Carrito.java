@@ -20,48 +20,71 @@ public class Carrito {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(name = "nombre", length = 50,nullable = false)
-	private String nombre;
+	@Column
+	private int cantidad;
 	
-	@ManyToMany	
-	@JoinTable(name = "carrito_producto", 
-	joinColumns = {@JoinColumn(name = "carrito_id")}, 
-	inverseJoinColumns = {@JoinColumn(name = "producto_id")})
-	private List<Producto> productos;
+	@Column
+	private int total;
+	
+	@ManyToOne
+	@JoinColumn(name = "producto_id")
+	private Producto producto;
 	
 	@ManyToOne
 	@JoinColumn(name = "comprador_id")
 	private Comprador comprador;
-	@Column
-	private int cantidad;
-	public int getCantidad() {
-		return cantidad;
-	}
-	public void setCantidad(int cantidad) {
-		this.cantidad = cantidad;
-	}
-	public Comprador getComprador() {
-		return comprador;
-	}
-	public void setComprador(Comprador comprador) {
-		this.comprador = comprador;
-	}
+	
+	@ManyToOne
+	@JoinColumn(name = "pedido_id")
+	private Pedido pedido;
+
 	public Integer getId() {
 		return id;
 	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getNombre() {
-		return nombre;
+
+	public int getCantidad() {
+		return cantidad;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
 	}
-	public List<Producto> getProductos() {
-		return productos;
+
+	public int getTotal() {
+		return total;
 	}
-	public void setProductos(List<Producto> productos) {
-		this.productos = productos; 
+
+	public void setTotal(int total) {
+		this.total = total;
 	}
+
+	public Producto getProducto() {
+		return producto;
+	}
+
+	public void setProducto(Producto producto) {
+		this.producto = producto;
+	}
+
+	public Comprador getComprador() {
+		return comprador;
+	}
+
+	public void setComprador(Comprador comprador) {
+		this.comprador = comprador;
+	}
+
+	public Pedido getPedido() {
+		return pedido;
+	}
+
+	public void setPedido(Pedido pedido) {
+		this.pedido = pedido;
+	}
+
+	
 }

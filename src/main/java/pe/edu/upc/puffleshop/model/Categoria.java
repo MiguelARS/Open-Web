@@ -1,13 +1,15 @@
 package pe.edu.upc.puffleshop.model;
 
+
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -20,16 +22,8 @@ public class Categoria {
 	@Column(name = "nombre", length = 50, nullable = false)
 	private String nombre;
 	
-	@ManyToMany(mappedBy = "categorias")
-	private List<Producto> productos;
-	
-	public List<Producto> getProductos() {
-		return productos;
-	}
-
-	public void setProductos(List<Producto> productos) {
-		this.productos = productos;
-	}
+	@OneToMany(mappedBy = "categoria", fetch = FetchType.LAZY)
+	private List<Producto_Categoria> producto_categoria;
 
 	public Integer getId() {
 		return id;
@@ -47,5 +41,14 @@ public class Categoria {
 		this.nombre = nombre;
 	}
 
+	public List<Producto_Categoria> getProducto_categoria() {
+		return producto_categoria;
+	}
+
+	public void setProducto_categoria(List<Producto_Categoria> producto_categoria) {
+		this.producto_categoria = producto_categoria;
+	}
+	
 	
 }
+

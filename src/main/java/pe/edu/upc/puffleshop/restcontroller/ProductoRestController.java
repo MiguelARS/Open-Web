@@ -109,12 +109,12 @@ public class ProductoRestController {
 
 	/**/
 	@ApiOperation(value = "EndPoint que permite asignar un producto a una tienda, donde id es el identificador de la tienda" )
-	@PostMapping(path = "/{id}/producto", 
+	@PostMapping(path = "/{id}/tienda", 
 			consumes = MediaType.APPLICATION_JSON_VALUE, 
 			produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> nuevoProducto(@PathVariable("id") Integer id,
 			@Valid @RequestBody Producto producto, Errors errors) {
-		
+		//cambiar Producto producto x tienda
 		try {
 			Optional<Producto> buscado 
 				= productoService.findById(producto.getId());

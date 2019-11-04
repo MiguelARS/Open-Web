@@ -1,5 +1,6 @@
 package pe.edu.upc.puffleshop.model;
 
+
 import java.util.List;
 
 import javax.persistence.Column;
@@ -28,7 +29,7 @@ public class Tienda {
 	@Column(name = "contraseña", length = 50, nullable = false)
 	private String contraseña;
 	
-	@Column(name = "telefono", length = 15, nullable = false)
+	@Column(name = "telefono")
 	private int telefono; 
 	
 	@Column(name = "direccion")
@@ -36,50 +37,63 @@ public class Tienda {
 	
 	@OneToMany(mappedBy = "tienda", fetch = FetchType.LAZY)
 	private List<Producto> productos;
-	
+
 	public Integer getId() {
 		return id;
 	}
-	public int getTelefono() {
-		return telefono;
-	}
-	public void setTelefono(int telefono) {
-		this.telefono = telefono;
-	}
-	public String getDireccion() {
-		return direccion;
-	}
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
-	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
 	public String getCorreo() {
 		return correo;
 	}
+
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
+
 	public String getContraseña() {
 		return contraseña;
 	}
+
 	public void setContraseña(String contraseña) {
 		this.contraseña = contraseña;
 	}
-	/*public List<Producto> getProductos() {
+
+	public int getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(int telefono) {
+		this.telefono = telefono;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public List<Producto> getProductos() {
 		return productos;
 	}
+
 	public void setProductos(List<Producto> productos) {
 		this.productos = productos;
-	}*/
+	}
 	
 	
-
 }
+
